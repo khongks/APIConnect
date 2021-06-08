@@ -58,8 +58,8 @@ For disaster recovery purposes, scheduled backup is recommended so that the back
       $ apicup subsys set mgmt cassandra-backup-host 172.16.102.99
       $ apicup subsys set mgmt cassandra-backup-port 22
       $ apicup subsys set mgmt cassandra-backup-schedule "0 0 1 * *"
-      $ apicup subsys set mgmt cassandra-backup-auth-user sftpuser
-      $ apicup subsys set mgmt cassandra-backup-auth-pass Passw0rd!
+      $ apicup subsys set mgmt cassandra-backup-auth-user <sftpuser>
+      $ apicup subsys set mgmt cassandra-backup-auth-pass <sftpuser-pass>
       ```
 
    2. Object Store backup
@@ -70,8 +70,8 @@ For disaster recovery purposes, scheduled backup is recommended so that the back
       $ apicup subsys set mgmt cassandra-backup-host s3.au-syd.cloud-object-storage.appdomain.cloud/ad-syd
       $ apicup subsys set mgmt cassandra-backup-port 443
       $ apicup subsys set mgmt cassandra-backup-schedule "0 0 1 * *"
-      $ apicup subsys set mgmt cassandra-backup-auth-user 932f7ee25ece487b83d05277208d6f7f
-      $ apicup subsys set mgmt cassandra-backup-auth-pass ae64bd39f0adc0d0b2873d24a2f272de80bf3df663dba388
+      $ apicup subsys set mgmt cassandra-backup-auth-user <s3user>
+      $ apicup subsys set mgmt cassandra-backup-auth-pass <s3user-pass>
       ```
 
 2. Run the command to activate / push the settings to the management subsystem; where `mgmt` is the name of the `SUBSYS_NAME`.
@@ -138,8 +138,8 @@ In most situation, taking regular scheduled backups and relying on those backups
    ```sh
    $ apicup subsys set portal site-backup-host 172.16.102.99
    $ apicup subsys set portal site-backup-port 22
-   $ apicup subsys set portal site-backup-auth-user sftpuser
-   $ apicup subsys set portal site-backup-auth-pass Passw0rd!
+   $ apicup subsys set portal site-backup-auth-user <sftpuser>
+   $ apicup subsys set portal site-backup-auth-pass <sftpuser-pass>
    $ apicup subsys set portal site-backup-path /site-backups
    $ apicup subsys set portal site-backup-protocol sftp
    $ apicup subsys set portal site-backup-schedule "0 0 1 * *"
@@ -282,8 +282,8 @@ Here, we are desribing a scenario where we are restoring the backups in a new DR
    $ apicup subsys set mgmt cassandra-backup-host 172.16.102.199
    $ apicup subsys set mgmt cassandra-backup-port 22
    $ apicup subsys set mgmt cassandra-backup-schedule "0 0 1 * *"
-   $ apicup subsys set mgmt cassandra-backup-auth-user sftpuser
-   $ apicup subsys set mgmt cassandra-backup-auth-pass Passw0rd!
+   $ apicup subsys set mgmt cassandra-backup-auth-user <sftpuser>
+   $ apicup subsys set mgmt cassandra-backup-auth-pass <sftpuser-pass>
    
    $ apicup subsys set portal site-backup-host 172.16.102.199
    $ apicup subsys set portal site-backup-port 22
